@@ -2,15 +2,14 @@
 This module is responsible for generating wordcloud images.
 """
 
+import base64
 import os
 import sys
+from io import BytesIO
 
-# Adds lambda/packages to the system path.
+# Adds lambda/create/packages to the system path.
 # This must be done before importing any modules from the packages directory.
 sys.path.append(os.path.join(os.path.dirname(__file__), "packages"))
-
-import base64
-from io import BytesIO
 
 from app_common.app_utils import log_object
 from app_common.base_lambda_handler import BaseLambdaHandler

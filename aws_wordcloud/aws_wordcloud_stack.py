@@ -30,7 +30,7 @@ class AWSWordCloudStack(Stack):
             self,
             "CreateWordCloudFunction",
             runtime=aws_lambda.Runtime.PYTHON_3_11,
-            handler="handler.lambda_handler",
+            handler="wordcloud_handler.lambda_handler",
             code=aws_lambda.Code.from_asset(
                 "lambda/create", exclude=["__pycache__", "*.pyc"]
             ),

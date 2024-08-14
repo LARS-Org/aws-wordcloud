@@ -6,7 +6,7 @@
     // This allows VSCode to resolve custom Python libraries in the project.
     // You need to install the Pylance extension for this to work.
     "python.analysis.extraPaths": [
-        //"${workspaceFolder}/path/to/my/library/",
+        "${workspaceFolder}/lambda/create/",
     ],
 
     "[python]": {

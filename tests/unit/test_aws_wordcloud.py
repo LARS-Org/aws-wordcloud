@@ -1,13 +1,26 @@
 """
-FIXME Document this
+Unit tests to verify the functionality of the aws-wordcloud service.
 """
+
+import os
+import sys
 
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 import pytest
-from handler import WordCloudHandler
 
 from aws_wordcloud.aws_wordcloud_stack import AWSWordCloudStack
+
+# Adds tests/unit/packages to the system path.
+# This must be done before importing any modules from the packages directory.
+sys.path.append(os.path.join(os.path.dirname(__file__), "packages"))
+
+# Adds lambda/create to the system path.
+# This must be done before importing any modules from the packages directory.
+project_root_dir = os.path.join(os.path.dirname(__file__), "..", "..")
+sys.path.append(os.path.abspath(os.path.join(project_root_dir, "lambda", "create")))
+
+from wordcloud_handler import WordCloudHandler
 
 
 # example tests. To run these tests, uncomment this file along with the example
