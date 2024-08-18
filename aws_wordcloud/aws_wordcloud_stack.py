@@ -1,6 +1,6 @@
 """
 A program that leverages AWS CDK to describe the structure, resources and
-artifacts of the la-wordcloud service. See examples in:
+artifacts of the aws-wordcloud service. See examples in:
   https://github.com/aws-samples
   https://github.com/aws-samples/aws-cdk-examples
   https://github.com/search?q=org%3Aaws-samples%20CfnTable&type=codecdk
@@ -18,8 +18,8 @@ from constructs import Construct
 
 class AWSWordCloudStack(Stack):
     """
-    This class defines the structure, resource and artifacts of the la-wordcloud
-    service through AWS CDK Constructs.
+    This class defines the structure, resource and artifacts of the
+    aws-wordcloud service through AWS CDK Constructs.
     """
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
@@ -30,7 +30,7 @@ class AWSWordCloudStack(Stack):
             self,
             "CreateWordCloudFunction",
             runtime=aws_lambda.Runtime.PYTHON_3_11,
-            handler="handler.lambda_handler",
+            handler="wordcloud_handler.lambda_handler",
             code=aws_lambda.Code.from_asset(
                 "lambda/create", exclude=["__pycache__", "*.pyc"]
             ),
