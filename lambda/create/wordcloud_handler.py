@@ -11,7 +11,7 @@ from io import BytesIO
 # This must be done before importing any modules from the packages directory.
 sys.path.append(os.path.join(os.path.dirname(__file__), "packages"))
 
-from app_common.app_utils import log_object
+from app_common.app_utils import do_log
 from app_common.base_lambda_handler import BaseLambdaHandler
 from wordcloud import WordCloud
 
