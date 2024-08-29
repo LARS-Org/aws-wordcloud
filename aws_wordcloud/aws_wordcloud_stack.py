@@ -50,8 +50,9 @@ class AWSWordCloudStack(Stack):
 
         create_wc_integration = aws_apigw.LambdaIntegration(create_wc_lambda)
 
-        # the API will have the following endpoints:
-        # POST /mindmap/create: Create a new mindmap from a JSON payload with the mindmap tree data
+        # The API will have the following endpoints:
+        # POST /wordcloud/create: Create a new wordcloud image from a JSON
+        # payload
 
         wordcloud_resource = apigw.root.add_resource("wordcloud")
         create_path_resource = wordcloud_resource.add_resource("create")
